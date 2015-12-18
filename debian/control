@@ -9,8 +9,6 @@ Build-Depends: debhelper (>= 9),
 Standards-Version: 3.9.5
 Section: libs
 Homepage: http://mindpax.me
-#Vcs-Git: git://anonscm.debian.org/collab-maint/python-bgapi.git
-#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/python-bgapi.git;a=summary
 
 Package: python-bgapi
 Architecture: all
