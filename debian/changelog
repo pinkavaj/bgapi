@@ -1,3 +1,9 @@
+python-bgapi (0.0.4-git-0002) stable; urgency=medium
+
+  * pull upstream changes
+
+ -- Jiri Pinkava <j-pi@mindpax.me>  Thu, 28 Jan 2016 21:11:33 +0100
+
 python-bgapi (0.0.0-git-0001) stable; urgency=low
 
   * Initial release
