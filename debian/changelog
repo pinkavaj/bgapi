@@ -1,3 +1,9 @@
+python-bgapi (0.0.6-git-0004) stable; urgency=medium
+
+  * fix installation
+
+ -- Jiri Pinkava <j-pi@mindpax.me>  Sat, 21 May 2016 12:44:05 +0200
+
 python-bgapi (0.0.5-git-0003) stable; urgency=medium
 
   * port to python3
