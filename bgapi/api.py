@@ -637,7 +637,7 @@ class BlueGigaCallbacks(object):
         logger.info("RSP-System Hello")
 
     def ble_rsp_system_address_get(self, address):
-        logger.info("RSP-System Address Get - " + hexlify(address).decode('ascii').upper())
+        logger.info("RSP-System Address Get - " + hexlify(address).decode().upper())
 
     def ble_rsp_system_reg_write(self, result):
         logger.info("RSP-System Register Write: [%s]" % RESULT_CODE[result])
@@ -704,10 +704,10 @@ class BlueGigaCallbacks(object):
         logger.info("RSP-Attributes Write: [%s]" %  RESULT_CODE[result])
 
     def ble_rsp_attributes_read(self, handle, offset, result, value):
-        logger.info("RSP-Attributes Read [%s] - Handle:%d - Offset:%d - Value:%s" %  (RESULT_CODE[result], handle, offset, hexlify(value[::-1]).decode('ascii').upper()))
+        logger.info("RSP-Attributes Read [%s] - Handle:%d - Offset:%d - Value:%s" %  (RESULT_CODE[result], handle, offset, hexlify(value[::-1]).decode().upper()))
 
     def ble_rsp_attributes_read_type(self, handle, result, value):
-        logger.info("RSP-Attributes Read Type [%s] - Handle:%d Value:%s" %  (RESULT_CODE[result], handle, hexlify(value[::-1]).decode('ascii').upper()))
+        logger.info("RSP-Attributes Read Type [%s] - Handle:%d Value:%s" %  (RESULT_CODE[result], handle, hexlify(value[::-1]).decode().upper()))
 
     def ble_rsp_attributes_user_read_response(self):
         logger.info("RSP-Attributes User Read Response")
@@ -916,7 +916,7 @@ class BlueGigaCallbacks(object):
 
     def ble_evt_attributes_value(self, connection, reason, handle, offset, value):
         logger.info("EVT-Attributes Value - Connection:%d - Reason:[%s] - Handle:%d - Offset:%d - " % (connection, ATTRIBUTE_CHANGE_REASON[reason], handle, offset) + \
-            "Value:%s" % (hexlify(value).decode('ascii').upper(), ))
+            "Value:%s" % (hexlify(value).decode().upper(), ))
 
     def ble_evt_attributes_user_read_request(self, connection, handle, offset, maxsize):
         logger.info("EVT-Attributes User Read Request")
@@ -926,7 +926,7 @@ class BlueGigaCallbacks(object):
 
     def ble_evt_connection_status(self, connection, flags, address, address_type, conn_interval, timeout, latency, bonding):
         logger.info("EVT-Connection Status - Handle:%d - Flags:%02X - " % (connection, flags) +
-                    "Address:%s - " % (hexlify(address[::-1]).decode('ascii').upper(), ) +
+                    "Address:%s - " % (hexlify(address[::-1]).decode().upper(), ) +
                     "Address Type:%d - Interval:%d - Timeout:%d - Latency:%d - Bonding:%d" % (address_type, conn_interval, timeout, latency, bonding))
 
     def ble_evt_connection_version_ind(self, connection, vers_nr, comp_id, sub_vers_nr):
@@ -950,18 +950,18 @@ class BlueGigaCallbacks(object):
 
     def ble_evt_attclient_group_found(self, connection, start, end, uuid):
         logger.info("EVT-Attribute Client Group Found - Connection:%d - Start Handle:%d - End Handle:%d - " % (connection, start, end) +
-                    "UUID:" + hexlify(uuid[::-1]).decode('ascii').upper())
+                    "UUID:" + hexlify(uuid[::-1]).decode().upper())
 
     def ble_evt_attclient_attribute_found(self, connection, chrdecl, value, properties, uuid):
         logger.info("EVT-Attribute Client Attribute Found")
 
     def ble_evt_attclient_find_information_found(self, connection, chrhandle, uuid):
         logger.info("EVT-Attribute Client Find Information Found - Connection:%d - Handle:%d - " % (connection, chrhandle) +
-                    "UUID:" + hexlify(uuid[::-1]).decode('ascii').upper())
+                    "UUID:" + hexlify(uuid[::-1]).decode().upper())
 
     def ble_evt_attclient_attribute_value(self, connection, atthandle, type, value):
         logger.info("EVT-Attribute Client Attribute Value - Connection:%d - Handle:%d - Type:%d - Value:%s" %
-                    (connection, atthandle, type, hexlify(value).decode('ascii').upper()))
+                    (connection, atthandle, type, hexlify(value).decode().upper()))
 
     def ble_evt_attclient_read_multiple_response(self, connection, handles):
         logger.info("EVT-Attribute Client Read Multiple Response")
@@ -986,7 +986,7 @@ class BlueGigaCallbacks(object):
         logger.info("EVT-GAP Scan Response - RSSI:%d - Packet Type:%d - " % (rssi, packet_type) +
                     "Sender:%02x:%02x:%02x:%02x:%02x:%02x - " % struct.unpack('BBBBBB', sender[::-1]) +
                     "Address Type:%d - Bond:%d - Data:" % (address_type, bond) +
-                    hexlify(data).decode('ascii').upper())
+                    hexlify(data).decode().upper())
 
     def ble_evt_gap_mode_changed(self, discover, connect):
         logger.info("EVT-GAP Mode Changed")
