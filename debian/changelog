@@ -1,8 +1,8 @@
-python-bgapi (0.0.5-git-0003) UNRELEASED; urgency=medium
+python-bgapi (0.0.5-git-0003) stable; urgency=medium
 
   * port to python3
 
- -- Jiri Pinkava <j-pi@mindpax.me>  Thu, 28 Jan 2016 21:11:33 +0100
+ -- Jiri Pinkava <j-pi@mindpax.me>  Sat, 21 May 2016 12:17:14 +0200
 
 python-bgapi (0.0.4-git-0002) stable; urgency=medium
 
